@@ -1,0 +1,27 @@
+networks:
+  swag:
+    external: true
+
+services:
+  app:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    restart: unless-stopped
+    networks:
+      - default
+    container_name: drigax_com
+    ports: 
+      - 8080:80
+      - 8081:443
+    #expose:
+    #  - '80'
+    #  - '443'
+    #labels:
+      #- 'swag=enable'
+      #- 'swag_address=site'
+      #- 'swag_url=site.drigax.com'
+      #- 'swag_proto=http'
+      #- 'swag_port=80'
+    
+    
