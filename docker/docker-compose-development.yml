@@ -11,6 +11,8 @@ services:
     networks:
       - default
     container_name: drigax_com
+    volumes:
+      - ../:/usr/share/nginx/html
     ports: 
       - 8080:80
       - 8081:443
